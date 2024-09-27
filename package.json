@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "cypress": "^13.14.2"
+    "cypress": "^13.15.0"
   },
   "name": "git-task",
   "version": "1.0.0",
@@ -121,6 +121,7 @@
     "pend": "^1.2.0",
     "performance-now": "^2.1.0",
     "pify": "^2.3.0",
+    "prettier": "^3.3.3",
     "pretty-bytes": "^5.6.0",
     "process": "^0.11.10",
     "proxy-from-env": "^1.0.0",
