@@ -6,4 +6,4 @@ Feature: Login to Application
 Scenario: valid login
 Given I open login page
 When I submit login page
-Then I should see homepage
+Then I should see account summary page
