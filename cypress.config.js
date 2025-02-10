@@ -10,7 +10,7 @@ module.exports = defineConfig({
             preprocessor.addCucumberPreprocessorPlugin(on, config);
             return config;
         },
-        specPattern: "**/*.feature",
+        specPattern: ["**/*.cy.js", "**/*.feature"],
     },
     chromeWebSecurity: false,
     videosFolder: "cypress/reports/videos",
