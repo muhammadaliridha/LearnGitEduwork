@@ -44,3 +44,43 @@ Cypress.Commands.add('payBills',()=>{
     cy.get('#pay_saved_payees').click()
     cy.get('#alert_content > span').should('contain','The payment was successfully submitted.')
 })
+
+Cypress.Commands.add('loginViaAPI', () => {
+    cy.request('GET', 'https://home.openweathermap.org/users/sign_in').then((response) => {
+      // Extract CSRF token from response body
+      const tokenMatch = response.body.match(/name="authenticity_token" value="(.+?)"/);
+      if (!tokenMatch) {
+        throw new Error('CSRF token not found in login page');
+      }
+      const csrfToken = tokenMatch[1];
+  
+      // Send login request with CSRF token
+      cy.request({
+        method: 'POST',
+        url: 'https://home.openweathermap.org/users/sign_in',
+        form: true, // Ensure form-urlencoded encoding
+        failOnStatusCode: false,
+        body: {
+          authenticity_token: csrfToken, // Include CSRF token
+          email: 'apitest@mail7.io',
+          password: 'Password01!'
+        }
+      }).then((loginResponse) => {
+        expect(loginResponse.status).to.eq(302); // Expect a redirect after successful login
+        cy.log()
+  
+        // Save session cookies
+        const cookies = loginResponse.headers['set-cookie'];
+        if (cookies) {
+          cookies.forEach((cookie) => {
+            const [cookieName, cookieValue] = cookie.split(';')[0].split('=');
+            cy.setCookie(cookieName, cookieValue);
+          });
+        }
+  
+        // Visit dashboard after login
+        cy.visit('https://home.openweathermap.org/');
+      });
+    });
+  });
+  

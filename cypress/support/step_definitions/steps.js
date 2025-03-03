@@ -8,12 +8,8 @@ Given('I open login page', () => {
 })
 
 When('I submit login page', () => {
-//    cy.get('#user_login').type('username')
     loginPage.typeUserName('username')
-    //cy.get('#user_password').type('password')
     loginPage.typePassword('password')
-    //cy.get('#user_remember_me').click()
-    //cy.get('.btn').click()
     loginPage.clickRemeberMe()
     loginPage.clickSigninButton()
 })
