@@ -1,4 +1,6 @@
 {
   "username": "username",
-  "password": "password"
+  "password": "password",
+  "userEmail": "admin",
+  "userPassword": "admin"
 }

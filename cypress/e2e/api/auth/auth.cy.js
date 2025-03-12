@@ -6,7 +6,7 @@ describe('Basic Auth', ()=>{
         cy.log()
     })
 
-    
+
     it('successfully login using headers',()=>{
         cy.visit('https://the-internet.herokuapp.com/basic_auth',{
             headers:{
@@ -16,4 +16,12 @@ describe('Basic Auth', ()=>{
         })
         cy.get('p').should('include.text','Congratulations! You must have the proper credentials')
     })
+  
+    it('should log in via API Command', () => {
+        // Call the custom command to log in via API
+        cy.fixture('user.json').then((user) => {
+            cy.loginViaAPI(user.userEmail, user.userPassword); // Pass username & password from user.json
+        });
+    });
 })
+    

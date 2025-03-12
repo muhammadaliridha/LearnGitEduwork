@@ -14,9 +14,12 @@
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.3",
     "cypress": "^13.15.0",
     "cypress-mochawesome-reporter": "^3.8.2"
-  }, 
+  },
   "cypress-cucumber-preprocessor": {
     "step_definitions": "cypress/support/step_definitions/",
     "nonGlobalStepDefinitions": false
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7"
   }
 }
