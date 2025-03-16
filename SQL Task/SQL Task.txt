@@ -1,0 +1,54 @@
+membua1. Membuat Tabel users
+CREATE TABLE users (
+    user_id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100) UNIQUE,
+    phone VARCHAR(15),
+    gender VARCHAR(10),
+    address TEXT
+);
+
+
+
+
+2. Memasukkan 30 Record Data
+INSERT INTO users (name, email, phone, gender, address) VALUES
+('Alice Johnson', 'alice.johnson@example.com', '081234567890', 'Female', 'Jakarta, Indonesia'),
+('Bob Smith', 'bob.smith@example.com', '081234567891', 'Male', 'Bandung, Indonesia'),
+('Charlie Brown', 'charlie.brown@example.com', '081234567892', 'Male', 'Surabaya, Indonesia'),
+('Diana Prince', 'diana.prince@example.com', '081234567893', 'Female', 'Medan, Indonesia'),
+('Edward Cullen', 'edward.cullen@example.com', '081234567894', 'Male', 'Denpasar, Indonesia'),
+('Fiona Gallagher', 'fiona.g@example.com', '081234567895', 'Female', 'Makassar, Indonesia'),
+('George Lucas', 'george.lucas@example.com', '081234567896', 'Male', 'Yogyakarta, Indonesia'),
+('Helen Parr', 'helen.parr@example.com', '081234567897', 'Female', 'Malang, Indonesia'),
+('Isaac Newton', 'isaac.newton@example.com', '081234567898', 'Male', 'Semarang, Indonesia'),
+('Jessica Jones', 'jessica.jones@example.com', '081234567899', 'Female', 'Palembang, Indonesia'),
+('Kyle Reese', 'kyle.reese@example.com', '081234567800', 'Male', 'Balikpapan, Indonesia'),
+('Laura Kinney', 'laura.kinney@example.com', '081234567801', 'Female', 'Bogor, Indonesia'),
+('Michael Scofield', 'michael.scofield@example.com', '081234567802', 'Male', 'Depok, Indonesia'),
+('Nancy Drew', 'nancy.drew@example.com', '081234567803', 'Female', 'Bekasi, Indonesia'),
+('Oscar Wilde', 'oscar.wilde@example.com', '081234567804', 'Male', 'Tangerang, Indonesia'),
+('Peter Parker', 'peter.parker@example.com', '081234567805', 'Male', 'Cirebon, Indonesia'),
+('Quinn Fabray', 'quinn.fabray@example.com', '081234567806', 'Female', 'Pontianak, Indonesia'),
+('Richard Hendricks', 'richard.hendricks@example.com', '081234567807', 'Male', 'Batam, Indonesia'),
+('Sarah Connor', 'sarah.connor@example.com', '081234567808', 'Female', 'Padang, Indonesia'),
+('Thomas Shelby', 'thomas.shelby@example.com', '081234567809', 'Male', 'Pekanbaru, Indonesia'),
+('Uma Thurman', 'uma.thurman@example.com', '081234567810', 'Female', 'Banda Aceh, Indonesia'),
+('Victor Stone', 'victor.stone@example.com', '081234567811', 'Male', 'Manado, Indonesia'),
+('Wanda Maximoff', 'wanda.maximoff@example.com', '081234567812', 'Female', 'Jayapura, Indonesia'),
+('Xander Harris', 'xander.harris@example.com', '081234567813', 'Male', 'Samarinda, Indonesia'),
+('Yvonne Strahovski', 'yvonne.s@example.com', '081234567814', 'Female', 'Mataram, Indonesia'),
+('Zack Fair', 'zack.fair@example.com', '081234567815', 'Male', 'Ambon, Indonesia'),
+('Adrian Monk', 'adrian.monk@example.com', '081234567816', 'Male', 'Tarakan, Indonesia'),
+('Beatrix Kiddo', 'beatrix.kiddo@example.com', '081234567817', 'Female', 'Palu, Indonesia'),
+('Clark Kent', 'clark.kent@example.com', '081234567818', 'Male', 'Kupang, Indonesia'),
+('Donna Paulsen', 'donna.paulsen@example.com', '081234567819', 'Female', 'Banjarmasin, Indonesia');
+
+
+
+3. Menampilkan Data dengan Alias
+SELECT 
+    name AS "Nama Lengkap",
+    phone AS "Nomor Telepon",
+    address AS "Alamat"
+FROM users;
