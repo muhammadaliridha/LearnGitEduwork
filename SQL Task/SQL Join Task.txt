@@ -1,0 +1,32 @@
+1. Query untuk Menampilkan Semua Produk Beserta Informasi User yang Menambahkannya
+SELECT 
+    users.id AS user_id,
+    users.name AS user_name,
+    products.id AS product_id,
+    products.name AS product_name,
+    products.price AS product_price
+FROM products
+LEFT JOIN users ON products.user_id = users.id;
+
+
+
+2. Query untuk Menampilkan Semua Produk dengan Kategorinya
+SELECT 
+    products.id AS product_id,
+    products.name AS product_name,
+    categories.id AS category_id,
+    categories.name AS category_name
+FROM products
+LEFT JOIN categories ON products.category_id = categories.id;
+
+
+
+3. Query untuk Menampilkan Semua Produk, User yang Menambahkannya, dan Kategorinya
+SELECT 
+    products.id AS product_id,
+    products.name AS product_name,
+    users.name AS user_name,
+    categories.name AS category_name
+FROM products
+LEFT JOIN users ON products.user_id = users.id
+LEFT JOIN categories ON products.category_id = categories.id;
